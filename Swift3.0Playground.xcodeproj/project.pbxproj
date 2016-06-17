@@ -8,7 +8,6 @@
 
 /* Begin PBXFileReference section */
 		E5889A1D1D13F35D00EE0A28 /* ImageLiterals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ImageLiterals.playground; sourceTree = "<group>"; };
-		E5889A1E1D13F38600EE0A28 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		E592CEBA1D13EA1300C856BE /* ColorLiterals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ColorLiterals.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -25,7 +24,6 @@
 			children = (
 				E5889A1D1D13F35D00EE0A28 /* ImageLiterals.playground */,
 				E592CEBA1D13EA1300C856BE /* ColorLiterals.playground */,
-				E5889A1E1D13F38600EE0A28 /* Media.xcassets */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
