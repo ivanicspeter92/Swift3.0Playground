@@ -9,6 +9,8 @@
 /* Begin PBXFileReference section */
 		E5889A1D1D13F35D00EE0A28 /* ImageLiterals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ImageLiterals.playground; sourceTree = "<group>"; };
 		E592CEBA1D13EA1300C856BE /* ColorLiterals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ColorLiterals.playground; sourceTree = "<group>"; };
+		E5F647051D16C638001CB617 /* TemperatureClass.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TemperatureClass.playground; sourceTree = "<group>"; };
+		E5F647061D16C860001CB617 /* TemperatureStruct.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TemperatureStruct.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -22,10 +24,20 @@
 		E592CEB91D13E9F000C856BE /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				E5F647041D16C61B001CB617 /* ReferenceAndValueTypes */,
 				E5889A1D1D13F35D00EE0A28 /* ImageLiterals.playground */,
 				E592CEBA1D13EA1300C856BE /* ColorLiterals.playground */,
 			);
 			path = Playgrounds;
+			sourceTree = "<group>";
+		};
+		E5F647041D16C61B001CB617 /* ReferenceAndValueTypes */ = {
+			isa = PBXGroup;
+			children = (
+				E5F647051D16C638001CB617 /* TemperatureClass.playground */,
+				E5F647061D16C860001CB617 /* TemperatureStruct.playground */,
+			);
+			path = ReferenceAndValueTypes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
