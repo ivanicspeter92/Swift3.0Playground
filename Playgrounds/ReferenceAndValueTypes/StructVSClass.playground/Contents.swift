@@ -6,11 +6,11 @@ class Number {
     }
 }
 
-func addOne(toNumber: Number) {
+func addOne(_ toNumber: Number) {
     toNumber.myNumber += 1;
 }
 
 let a = Number(myNumber: 1);
 a.myNumber;
-addOne(toNumber: a);
+addOne(a);
 a.myNumber;

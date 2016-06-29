@@ -5,7 +5,7 @@ public struct Diagram {
         self.items = items;
     }
     
-    mutating func add(item: Drawable) {
+    mutating func add(_ item: Drawable) {
         self.items.append(item);
     }
 }
