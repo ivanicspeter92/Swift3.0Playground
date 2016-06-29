@@ -1,5 +1,5 @@
 extension Circle: Drawable {
-    func draw() {
+    public func draw() {
         
     }
 }

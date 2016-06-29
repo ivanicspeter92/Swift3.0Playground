@@ -1,5 +1,5 @@
 extension Polygon: Drawable {
-    func draw() {
+    public func draw() {
         
     }
 }

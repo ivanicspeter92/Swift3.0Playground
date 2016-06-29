@@ -1,5 +1,5 @@
 extension Diagram: Drawable {
-    func draw() {
+    public func draw() {
         for item in self.items {
             item.draw();
         }
