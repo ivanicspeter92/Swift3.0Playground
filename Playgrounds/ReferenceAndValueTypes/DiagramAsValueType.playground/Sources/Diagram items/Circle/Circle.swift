@@ -1,6 +1,11 @@
 import UIKit
 
 public struct Circle {
-    var center: CGPoint;
-    var radius: Double;
+    public var center: CGPoint;
+    public var radius: Double;
+    
+    public init(center: CGPoint, radius: Double) {
+        self.center = center;
+        self.radius = radius;
+    }
 }

@@ -1,5 +1,9 @@
 import UIKit
 
 public struct Polygon {
-    var corners: [CGPoint] = [];
+    public var corners: [CGPoint] = [];
+    
+    public init(corners: [CGPoint]) {
+        self.corners = corners;
+    }
 }

@@ -1,3 +1,3 @@
-protocol Drawable {
+public protocol Drawable {
     func draw();
 }
