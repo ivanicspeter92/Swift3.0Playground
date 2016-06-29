@@ -1,0 +1,2 @@
+extension Owner: JSONSerializable {
+}
