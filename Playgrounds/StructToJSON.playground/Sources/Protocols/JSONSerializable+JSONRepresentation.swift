@@ -1,7 +1,7 @@
 import Foundation
 
 extension JSONSerializable {
-    var JSONRepresentation: AnyObject {
+    public var JSONRepresentation: AnyObject {
         var representation = [String: AnyObject]()
         
         for case let (label?, value) in Mirror(reflecting: self).children {
