@@ -15,25 +15,49 @@ func getJsonContents(from data: Data) -> Payload? {
     }
 }
 
+func getFeed(from json: Payload) -> Payload? {
+    let feed = json["feed"] as? Payload
+    
+    return feed
+}
+
+func getApps(from feed: Payload) -> [AnyObject]? {
+    let apps = feed["entry"] as? [AnyObject]
+    
+    return apps
+}
+
+func getFirstApp(from feed: Payload) -> Payload? {
+    if let apps = getApps(from: feed) {
+        return getFirstApp(from: apps);
+    }
+    return nil;
+}
+
+func getFirstApp(from apps: [AnyObject]) -> Payload? {
+    let firstApp = apps.first as? Payload
+    
+    return firstApp;
+}
+
+func getName(of app: Payload) -> String? {
+    return (app["im:name"] as? Payload)?["label"] as? String
+}
+
+func getLink(of app: Payload) -> String? {
+    return (app["id"] as? Payload)?["label"] as? String
+}
+
 DataManager.getTopAppsDataFromFileWithSuccess { (data) -> Void in
     if let json = getJsonContents(from: data) {
-        guard let feed = json["feed"] as? Payload,
-            let apps = feed["entry"] as? [AnyObject],
-            let app = apps.first as? Payload
+        guard let feed = getFeed(from: json),
+            let app = getFirstApp(from: feed),
+            let name = getName(of: app),
+            let link = getLink(of: app)
             else { PlaygroundPage.current.finishExecution() }
         
-        guard let container = app["im:name"] as? Payload,
-            let name = container["label"] as? String
-            else { PlaygroundPage.current.finishExecution() }
-        
-        guard let id = app["id"] as? Payload,
-            let link = id["label"] as? String
-            else { PlaygroundPage.current.finishExecution() }
-        
-        // 3
         let entry = App(name: name, link: link)
         print(entry)
-        
         PlaygroundPage.current.finishExecution()
     }
 }
