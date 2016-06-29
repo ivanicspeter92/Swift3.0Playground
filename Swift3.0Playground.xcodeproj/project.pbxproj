@@ -12,6 +12,7 @@
 		E58EE9BD1D16C9BD00A51BEB /* ImplementingEquatable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ImplementingEquatable.playground; sourceTree = "<group>"; };
 		E58EE9BE1D16F0AA00A51BEB /* DiagramAsValueType.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DiagramAsValueType.playground; sourceTree = "<group>"; };
 		E592CEBA1D13EA1300C856BE /* ColorLiterals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ColorLiterals.playground; sourceTree = "<group>"; };
+		E59E3D5A1D23B717008AE8DC /* StructToJSON.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StructToJSON.playground; sourceTree = "<group>"; };
 		E5F647051D16C638001CB617 /* TemperatureClass.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TemperatureClass.playground; sourceTree = "<group>"; };
 		E5F647061D16C860001CB617 /* TemperatureStruct.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TemperatureStruct.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -28,10 +29,10 @@
 			isa = PBXGroup;
 			children = (
 				E5F647041D16C61B001CB617 /* ReferenceAndValueTypes */,
-				E5634C071D23B6A90081A1AD /* StructToJSON.playground */,
 				E5889A1D1D13F35D00EE0A28 /* ImageLiterals.playground */,
 				E592CEBA1D13EA1300C856BE /* ColorLiterals.playground */,
 				E58EE9BD1D16C9BD00A51BEB /* ImplementingEquatable.playground */,
+				E59E3D5A1D23B717008AE8DC /* StructToJSON.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
