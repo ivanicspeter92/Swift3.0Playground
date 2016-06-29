@@ -1,2 +1,2 @@
-protocol JSONSerializable: JSONRepresentable {
+public protocol JSONSerializable: JSONRepresentable {
 }

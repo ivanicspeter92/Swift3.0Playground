@@ -1,7 +1,7 @@
 import Foundation
 
 extension JSONSerializable {
-    func toJSON() -> String? {
+    public func toJSON() -> String? {
         let representation = JSONRepresentation
         
         guard JSONSerialization.isValidJSONObject(representation) else {
