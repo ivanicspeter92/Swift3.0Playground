@@ -9,6 +9,16 @@
 import Foundation
 
 public class DataManager {
+    public class func getTopAppsDataFromItunesWithSuccess(success: ((iTunesData: Data) -> Void)) {
+        let topAppURL = "https://itunes.apple.com/us/rss/topgrossingipadapplications/limit=25/json"
+
+        self.loadData(url: URL(string: topAppURL)!, completion:{(data, error) -> Void in
+            if let data = data {
+                success(iTunesData: data)
+            }
+        })
+    }
+    
     public class func getTopAppsDataFromFileWithSuccess(_ success: ((data: Data) -> Void)) {
         DispatchQueue.global(attributes: DispatchQueue.GlobalAttributes.qosDefault).async(execute: {
             let filePath = Bundle.main().pathForResource("topapps", ofType:"json")
@@ -18,7 +28,7 @@ public class DataManager {
         })
     }
     
-    public class func loadDataFromURL(_ url: URL, completion:(data: Data?, error: NSError?) -> Void) {
+    public class func loadData(url: URL, completion:(data: Data?, error: NSError?) -> Void) {
         let session = URLSession.shared()
         
         let loadDataTask = session.dataTask(with: url as URL) { (data, response, error) -> Void in
