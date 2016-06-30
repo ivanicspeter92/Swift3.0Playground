@@ -13,7 +13,7 @@
 		E58EE9BE1D16F0AA00A51BEB /* DiagramAsValueType.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DiagramAsValueType.playground; sourceTree = "<group>"; };
 		E592CEBA1D13EA1300C856BE /* ColorLiterals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ColorLiterals.playground; sourceTree = "<group>"; };
 		E59E3D5A1D23B717008AE8DC /* StructToJSON.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StructToJSON.playground; sourceTree = "<group>"; };
-		E5D76ECE1D241F3C0085BEF2 /* JSONParsingWithGloss.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = JSONParsingWithGloss.playground; sourceTree = "<group>"; };
+		E5D76ECE1D241F3C0085BEF2 /* JSONParsingInSwift.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = JSONParsingInSwift.playground; sourceTree = "<group>"; };
 		E5F647051D16C638001CB617 /* TemperatureClass.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TemperatureClass.playground; sourceTree = "<group>"; };
 		E5F647061D16C860001CB617 /* TemperatureStruct.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TemperatureStruct.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -34,7 +34,7 @@
 				E592CEBA1D13EA1300C856BE /* ColorLiterals.playground */,
 				E58EE9BD1D16C9BD00A51BEB /* ImplementingEquatable.playground */,
 				E59E3D5A1D23B717008AE8DC /* StructToJSON.playground */,
-				E5D76ECE1D241F3C0085BEF2 /* JSONParsingWithGloss.playground */,
+				E5D76ECE1D241F3C0085BEF2 /* JSONParsingInSwift.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
