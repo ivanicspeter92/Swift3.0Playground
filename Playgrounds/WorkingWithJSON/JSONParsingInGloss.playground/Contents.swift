@@ -1,4 +1,4 @@
-// Playground presenting how to parse JSON files using Gloss framework
+// Playground presenting how to parse JSON files using Gloss framework 
 // Source: https://www.raywenderlich.com/120442/swift-json-tutorial
 // 
 // Other references: https://github.com/hkellaway/Gloss
@@ -18,7 +18,8 @@ func getJsonContents(from data: Data) -> Payload? {
     }
 }
 
-DataManager.getTopAppsDataFromFileWithSuccess { (data) -> Void in
+//DataManager.getTopAppsDataFromFileWithSuccess { (data) -> Void in
+DataManager.getTopAppsDataFromItunesWithSuccess { (data) -> Void in
     if let json = getJsonContents(from: data) {
         guard let topApps = TopApps(json: json),
             let entry = topApps.feed?.entries?.first
