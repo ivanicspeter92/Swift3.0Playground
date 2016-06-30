@@ -1,4 +1,5 @@
-//: Playground - noun: a place where people can play
+// Playground presenting how to parse JSON files using Gloss framework
+// Source: https://www.raywenderlich.com/120442/swift-json-tutorial
 import Foundation
 import PlaygroundSupport
 
