@@ -16,7 +16,7 @@ func getJsonContents(from data: Data) -> Payload? {
 
 DataManager.getTopAppsDataFromFileWithSuccess { (data) -> Void in
     if let json = getJsonContents(from: data) {
-        guard let parser = AppJSONParser(with: json),
+        guard let parser = TopAppsJSONParser(with: json),
             let app = parser.getFirstApp(),
             let name = parser.getName(of: app),
             let link = parser.getLink(of: app)

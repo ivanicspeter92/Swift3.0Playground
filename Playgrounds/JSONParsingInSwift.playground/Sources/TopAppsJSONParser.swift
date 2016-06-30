@@ -2,7 +2,7 @@ import Foundation
 
 public typealias Payload = [String: AnyObject]
 
-public class AppJSONParser {
+public class TopAppsJSONParser {
     // MARK: - Variables
     private let feed: Payload
     
