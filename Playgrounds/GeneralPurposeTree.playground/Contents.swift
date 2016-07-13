@@ -22,3 +22,5 @@ let ginger = Node(value: "ginger ale"), lemon = Node(value: "bitter lemon");
 soda.addChild(nodes: [ginger, lemon]);
 
 print(beverages);
+
+beverages.search(value: "tea");
