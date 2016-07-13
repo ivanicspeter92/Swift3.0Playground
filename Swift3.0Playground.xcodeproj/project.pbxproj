@@ -23,6 +23,7 @@
 		E51A4ED01D258F6100DFD2EC /* WorkingWithJSON */ = {
 			isa = PBXGroup;
 			children = (
+				E59E3D5A1D23B717008AE8DC /* StructToJSON.playground */,
 				E51A4ECF1D258A6A00DFD2EC /* JSONParsingInGloss.playground */,
 				E5D76ECE1D241F3C0085BEF2 /* JSONParsingInSwift.playground */,
 			);
@@ -44,7 +45,6 @@
 				E5889A1D1D13F35D00EE0A28 /* ImageLiterals.playground */,
 				E592CEBA1D13EA1300C856BE /* ColorLiterals.playground */,
 				E58EE9BD1D16C9BD00A51BEB /* ImplementingEquatable.playground */,
-				E59E3D5A1D23B717008AE8DC /* StructToJSON.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
