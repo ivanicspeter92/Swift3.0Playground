@@ -14,4 +14,10 @@ public class Node {
         self.children.append(node);
         node.parent = self;
     }
+    
+    public func addChild(nodes: [Node]) {
+        for node in nodes {
+            self.addChild(node: node);
+        }
+    }
 }
