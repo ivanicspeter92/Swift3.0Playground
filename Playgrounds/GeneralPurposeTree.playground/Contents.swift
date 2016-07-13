@@ -20,3 +20,5 @@ coldBeverages.addChild(nodes: [soda, milk]);
 
 let ginger = Node(value: "ginger ale"), lemon = Node(value: "bitter lemon");
 soda.addChild(nodes: [ginger, lemon]);
+
+print(beverages);
