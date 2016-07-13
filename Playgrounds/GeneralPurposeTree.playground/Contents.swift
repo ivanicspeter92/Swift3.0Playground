@@ -15,7 +15,7 @@ tea.addChild(nodes: [black, green, chai]);
 let coldBeverages = Node(value: "cold");
 beverages.addChild(node: coldBeverages);
 
-let soda = Node(value: "cold"), milk = Node(value: "milk");
+let soda = Node(value: "soda"), milk = Node(value: "milk");
 coldBeverages.addChild(nodes: [soda, milk]);
 
 let ginger = Node(value: "ginger ale"), lemon = Node(value: "bitter lemon");
