@@ -9,6 +9,8 @@
 /* Begin PBXFileReference section */
 		E51A4ECF1D258A6A00DFD2EC /* JSONParsingInGloss.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = JSONParsingInGloss.playground; sourceTree = "<group>"; };
 		E5634C091D23B6C70081A1AD /* StructVSClass.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StructVSClass.playground; sourceTree = "<group>"; };
+		E573DFBC1D40A77E00E06E44 /* Avoiding Errors with nil.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Avoiding Errors with nil.playground"; sourceTree = "<group>"; };
+		E573DFBD1D40A77E00E06E44 /* Avoiding Errors with Custom Handling.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Avoiding Errors with Custom Handling.playground"; sourceTree = "<group>"; };
 		E5889A1D1D13F35D00EE0A28 /* ImageLiterals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ImageLiterals.playground; sourceTree = "<group>"; };
 		E58EE9BD1D16C9BD00A51BEB /* ImplementingEquatable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ImplementingEquatable.playground; sourceTree = "<group>"; };
 		E58EE9BE1D16F0AA00A51BEB /* DiagramAsValueType.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DiagramAsValueType.playground; sourceTree = "<group>"; };
@@ -38,9 +40,19 @@
 			);
 			sourceTree = "<group>";
 		};
+		E573DFBB1D40A76000E06E44 /* ErrorHandling */ = {
+			isa = PBXGroup;
+			children = (
+				E573DFBC1D40A77E00E06E44 /* Avoiding Errors with nil.playground */,
+				E573DFBD1D40A77E00E06E44 /* Avoiding Errors with Custom Handling.playground */,
+			);
+			path = ErrorHandling;
+			sourceTree = "<group>";
+		};
 		E592CEB91D13E9F000C856BE /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				E573DFBB1D40A76000E06E44 /* ErrorHandling */,
 				E5F647041D16C61B001CB617 /* ReferenceAndValueTypes */,
 				E51A4ED01D258F6100DFD2EC /* WorkingWithJSON */,
 				E592CEBA1D13EA1300C856BE /* ColorLiterals.playground */,
