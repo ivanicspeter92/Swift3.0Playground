@@ -39,31 +39,18 @@ protocol MagicalTutorialObject {
 // Example One - Avoiding Swift errors using nil (failable initializers)
 // ----------------------------------------------------------------------------
 
-enum MagicWords: String {
-  case Abracadbra = "abracadabra"
-  case Alakazam = "alakazam"
-  case HocusPocus = "hocus pocus"
-  case PrestoChango = "presto chango"
-}
-
 struct Spell: MagicalTutorialObject {
-  var magicWords: MagicWords = .Abracadbra
-  var avatar = "💫"
+    var magicWords: MagicWords = .Abracadbra
+    var avatar = "💫"
+    
+    init?(words: String) {
+        guard let incantation = MagicWords(rawValue: words) else {
+            return nil
+        }
+        self.magicWords = incantation
+    }
 }
 
-extension Spell {
-  static func create(words: String) -> Spell? {
-    if let incantation = MagicWords(rawValue: words) {
-      var spell = Spell()
-      spell.magicWords = incantation
-      return spell
-    }
-    else {
-      return nil
-    }
-  }
-}
-
-let first = Spell.create(words: "abracadabra")
-let second = Spell.create(words: "ascendio")
+let first = Spell(words: "abracadabra")
+let second = Spell(words: "ascendio")
     
