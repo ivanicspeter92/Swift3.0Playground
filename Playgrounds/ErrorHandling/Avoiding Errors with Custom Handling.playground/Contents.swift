@@ -31,32 +31,32 @@
 // Source: https://www.raywenderlich.com/130197/magical-error-handling-swift
 
 protocol MagicalTutorialObject {
-  var avatar: String { get }
+    var avatar: String { get }
 }
 
 enum MagicWords: String {
-  case Abracadbra = "abracadabra"
-  case Alakazam = "alakazam"
-  case HocusPocus = "hocus pocus"
-  case PrestoChango = "presto chango"
+    case Abracadbra = "abracadabra"
+    case Alakazam = "alakazam"
+    case HocusPocus = "hocus pocus"
+    case PrestoChango = "presto chango"
 }
 
 struct Spell: MagicalTutorialObject {
-  
-  var magicWords: MagicWords = .Abracadbra
-  var avatar = "💫"
-  
-  // If words are considered magical, we can create a spell
-  init?(words: String) {
-    guard let incantation = MagicWords(rawValue: words) else {
-      return nil
+    
+    var magicWords: MagicWords = .Abracadbra
+    var avatar = "💫"
+    
+    // If words are considered magical, we can create a spell
+    init?(words: String) {
+        guard let incantation = MagicWords(rawValue: words) else {
+            return nil
+        }
+        self.magicWords = incantation
     }
-    self.magicWords = incantation
-  }
-  
-  init?(magicWords: MagicWords) {
-    self.magicWords = magicWords
-  }
+    
+    init?(magicWords: MagicWords) {
+        self.magicWords = magicWords
+    }
 }
 
 
@@ -67,112 +67,191 @@ struct Spell: MagicalTutorialObject {
 // Familiars
 
 protocol Familiar: MagicalTutorialObject {
-  var noise: String { get }
-  var name: String? { get set }
-  init()
-  init(name: String?)
+    var noise: String { get }
+    var name: String? { get set }
+    init()
+    init(name: String?)
 }
 
 extension Familiar {
-  init(name: String?) {
-    self.init()
-    self.name = name
-  }
-  func speak() {
-    print(avatar, "* \(noise)s *")
-  }
+    init(name: String?) {
+        self.init()
+        self.name = name
+    }
+    func speak() {
+        print(avatar, "* \(noise)s *")
+    }
 }
 
 
 struct Cat: Familiar {
-  var name: String?
-  var noise  = "purr"
-  var avatar = "🐱"
+    var name: String?
+    var noise  = "purr"
+    var avatar = "🐱"
 }
 
 struct Bat: Familiar {
-  var name: String?
-  var noise = "screech"
-  var avatar = "[bat]" // Sadly there is no bat avatar
-  func speak() {
-    print(avatar, "* \(noise)es *") // Different verb conjugation suffix than the protocol implementation
-  }
+    var name: String?
+    var noise = "screech"
+    var avatar = "[bat]" // Sadly there is no bat avatar
+    func speak() {
+        print(avatar, "* \(noise)es *") // Different verb conjugation suffix than the protocol implementation
+    }
 }
 
 struct Toad: Familiar {
-  var name: String?
-  var noise  = "croak"
-  var avatar = "🐸"
+    var name: String?
+    var noise  = "croak"
+    var avatar = "🐸"
 }
 
 // Magical Things
 
 struct Hat {
-  enum HatSize {
-    case Small
-    case Medium
-    case Large
-  }
-  
-  enum HatColor {
-    case Black
-  }
-  
-  var color: HatColor = .Black
-  var size: HatSize = .Medium
-  var isMagical = true
+    enum HatSize {
+        case Small
+        case Medium
+        case Large
+    }
+    
+    enum HatColor {
+        case Black
+    }
+    
+    var color: HatColor = .Black
+    var size: HatSize = .Medium
+    var isMagical = true
 }
 
 
 protocol MagicalBeing: MagicalTutorialObject {
-  var name: String? { get set }
-  var familiar: Familiar? { get set}
-  var spells: [Spell] { get set }
-  
-  func turnFamiliarIntoToad() -> Toad
+    var name: String? { get set }
+    var familiar: Familiar? { get set}
+    var spells: [Spell] { get set }
+    
+    func turnFamiliarIntoToad() throws -> Toad
 }
 
 struct Witch: MagicalBeing {
-  var avatar = "👩🏻"
-  var name: String?
-  var familiar: Familiar?
-  var spells: [Spell] = []
-  var hat: Hat?
-  
-  init(name: String?, familiar: Familiar?) {
-    self.name = name
-    self.familiar = familiar
+    var avatar = "👩🏻"
+    var name: String?
+    var familiar: Familiar?
+    var spells: [Spell] = []
+    var hat: Hat?
     
-    if let s = Spell(magicWords: .PrestoChango) {
-      self.spells = [s]
-    }
-  }
-  
-  init(name: String?, familiar: Familiar?, hat: Hat?) {
-    self.init(name: name, familiar: familiar)
-    self.hat = hat
-  }
-  
-  func turnFamiliarIntoToad() -> Toad {
-    if let hat = hat {
-      if hat.isMagical { // When have you ever seen a Witch perform a spell without her magical hat on ? :]
-        if let familiar = familiar {   // Check if witch has a familiar
-          if let toad = familiar as? Toad {  // Check if familiar is already a toad - no magic required
-            return toad
-          } else {
-            if hasSpell(type: .PrestoChango) {
-              if let name = familiar.name {
-                return Toad(name: name)
-              }
-            }
-          }
+    init(name: String?, familiar: Familiar?) {
+        self.name = name
+        self.familiar = familiar
+        
+        if let s = Spell(magicWords: .PrestoChango) {
+            self.spells = [s]
         }
-      }
     }
-    return Toad(name: "New Toad")  // This is an entirely new Toad.
-  }
-  
-  func hasSpell(type: MagicWords) -> Bool { // Check if witch currently has appropriate spell in their spellbook
-    return spells.contains { $0.magicWords == type }
-  }
+    
+    init(name: String?, familiar: Familiar?, hat: Hat?) {
+        self.init(name: name, familiar: familiar)
+        self.hat = hat
+    }
+    
+    func turnFamiliarIntoToad() throws -> Toad {
+        guard let hat = hat where hat.isMagical else {
+            throw ChangoSpellError.HatMissingOrNotMagical
+        }
+        guard let familiar = familiar else {
+            throw ChangoSpellError.NoFamiliar
+        }
+        if familiar is Toad {
+            throw ChangoSpellError.FamiliarAlreadyAToad
+        } else {
+            guard hasSpell(type: .PrestoChango) else {
+                throw ChangoSpellError.SpellNotKnownToWitch
+            }
+            
+            guard let name = familiar.name else {
+                let reason = "Familiar doesn’t have a name."
+                throw ChangoSpellError.SpellFailed(reason: reason)
+            }
+            
+            return Toad(name: name)
+        }
+    }
+    
+    func hasSpell(type: MagicWords) -> Bool {
+        return spells.contains { $0.magicWords == type }
+    }
+    
+    func speak() {
+        defer { // runs after the scope of this function is finished
+            print("*cackles*")
+        }
+        defer { // this will be executed before the defer statement above
+            print("*screeches*")
+        }
+        print("Hello my pretties.")
+    }
 }
+
+func exampleOne() {
+    print("") // Add an empty line in the debug area
+    
+    // 1
+    let salem = Cat(name: "Salem Saberhagen")
+    salem.speak()
+    
+    // 2
+    let witchOne = Witch(name: "Sabrina", familiar: salem)
+    do {
+        // 3
+        try witchOne.turnFamiliarIntoToad()
+    }
+        // 4
+    catch let error as ChangoSpellError {
+        handleSpellError(error: error)
+    }
+        // 5
+    catch {
+        print("Something went wrong, are you feeling OK?")
+    }
+}
+
+func exampleTwo() {
+    print("") // Add an empty line in the debug area
+    
+    let toad = Toad(name: "Mr. Toad")
+    toad.speak()
+    
+    let hat = Hat()
+    let witchTwo = Witch(name: "Elphaba", familiar: toad, hat: hat)
+    
+    let newToad = try? witchTwo.turnFamiliarIntoToad()
+    if newToad != nil { // Same logic as: if let _ = newToad
+        print("Successfully changed familiar into toad.")
+    } else {
+        print("Spell failed.")
+    }
+}
+
+func exampleThree() {
+    print("") // Add an empty line in the debug area
+    
+    let witchThree = Witch(name: "Hermione", familiar: nil, hat: nil)
+    witchThree.speak()
+}
+
+func handleSpellError(error: ChangoSpellError) {
+    let prefix = "Spell Failed."
+    switch error {
+    case .HatMissingOrNotMagical:
+        print("\(prefix) Did you forget your hat, or does it need its batteries charged?")
+        
+    case .FamiliarAlreadyAToad:
+        print("\(prefix) Why are you trying to change a Toad into a Toad?")
+        
+    default:
+        print(prefix)
+    }
+}
+
+exampleOne()
+exampleTwo()
+exampleThree()
