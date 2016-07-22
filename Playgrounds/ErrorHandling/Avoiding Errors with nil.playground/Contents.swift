@@ -30,26 +30,9 @@
 // All objects in this tutorial need an avatar, to make things exciting.
 // Source: https://www.raywenderlich.com/130197/magical-error-handling-swift
 
-protocol MagicalTutorialObject {
-  var avatar: String { get }
-}
-
-
 // ----------------------------------------------------------------------------
 // Example One - Avoiding Swift errors using nil (failable initializers)
 // ----------------------------------------------------------------------------
-
-struct Spell: MagicalTutorialObject {
-    var magicWords: MagicWords = .Abracadbra
-    var avatar = "💫"
-    
-    init?(words: String) {
-        guard let incantation = MagicWords(rawValue: words) else {
-            return nil
-        }
-        self.magicWords = incantation
-    }
-}
 
 let first = Spell(words: "abracadabra")
 let second = Spell(words: "ascendio")
