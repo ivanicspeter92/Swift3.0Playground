@@ -8,6 +8,7 @@
 
 /* Begin PBXFileReference section */
 		E51A4ECF1D258A6A00DFD2EC /* JSONParsingInGloss.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = JSONParsingInGloss.playground; sourceTree = "<group>"; };
+		E54E9F3B1D6DFEC600810FBB /* InsertionSort.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = InsertionSort.playground; sourceTree = "<group>"; };
 		E5634C091D23B6C70081A1AD /* StructVSClass.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StructVSClass.playground; sourceTree = "<group>"; };
 		E573DFBC1D40A77E00E06E44 /* Avoiding Errors with nil.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Avoiding Errors with nil.playground"; sourceTree = "<group>"; };
 		E573DFBD1D40A77E00E06E44 /* Avoiding Errors with Custom Handling.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Avoiding Errors with Custom Handling.playground"; sourceTree = "<group>"; };
@@ -40,6 +41,14 @@
 			);
 			sourceTree = "<group>";
 		};
+		E54E9F3A1D6DFEB700810FBB /* Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				E54E9F3B1D6DFEC600810FBB /* InsertionSort.playground */,
+			);
+			name = Algorithms;
+			sourceTree = "<group>";
+		};
 		E573DFBB1D40A76000E06E44 /* ErrorHandling */ = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +61,7 @@
 		E592CEB91D13E9F000C856BE /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				E54E9F3A1D6DFEB700810FBB /* Algorithms */,
 				E573DFBB1D40A76000E06E44 /* ErrorHandling */,
 				E5F647041D16C61B001CB617 /* ReferenceAndValueTypes */,
 				E51A4ED01D258F6100DFD2EC /* WorkingWithJSON */,
