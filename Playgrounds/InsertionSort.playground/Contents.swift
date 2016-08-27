@@ -15,6 +15,5 @@ func insertionSort(array: [Int]) -> [Int] {
     return result
 }
 
-let test = [5, 2, 4, 6, 1, 3];
-assert(insertionSort(array: test) == [1,2,3,4,5,6])
-assert(insertionSort(array: test) == [1,2,3,4,5,6], "array sorting failed")
+assert(insertionSort(array: [5, 2, 4, 6, 1, 3]) == [1,2,3,4,5,6], "array sorting failed")
+assert(insertionSort(array: [31, 41, 59, 26, 41, 58]) == [26, 31, 41, 41, 58, 59], "array sorting failed")
