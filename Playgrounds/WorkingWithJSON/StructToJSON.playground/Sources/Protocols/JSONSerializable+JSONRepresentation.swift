@@ -18,6 +18,6 @@ extension JSONSerializable {
             }
         }
         
-        return representation
+        return representation as AnyObject
     }
 }
