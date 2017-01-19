@@ -34,6 +34,7 @@ class ViewController: UIViewController {
   // MARK: - Properties
   fileprivate var tags: [String]?
   fileprivate var colors: [PhotoColor]?
+  let authKey = "Basic YWNjXzY0MmRkMjRmY2NhYjBiZjo5NzM2YjllNjIzOGU2OWI0YjY5N2Q3NjFmYzVjMWEzYg=="
 
   // MARK: - View Life Cycle
   override func viewDidLoad() {
@@ -140,7 +141,7 @@ extension ViewController {
                                  mimeType: "image/jpeg")
     },
       to: "http://api.imagga.com/v1/content",
-      headers: ["Authorization": "Basic YWNjXzY0MmRkMjRmY2NhYjBiZjo5NzM2YjllNjIzOGU2OWI0YjY5N2Q3NjFmYzVjMWEzYg=="],
+      headers: ["Authorization": self.authKey],
       encodingCompletion: { encodingResult in
         switch encodingResult {
         case .success(let upload, _, _):
@@ -169,12 +170,48 @@ extension ViewController {
             print("Content uploaded with ID: \(firstFileID)")
             
             // 3.
-            completion([String](), [PhotoColor]())
+            self.downloadTags(contentID: firstFileID) { tags in
+              completion(tags, [PhotoColor]())
+            }
           }
         case .failure(let encodingError):
           print(encodingError)
         }
     }
     )
+  }
+  
+  func downloadTags(contentID: String, completion: @escaping ([String]) -> Void) {
+    Alamofire.request(
+      "http://api.imagga.com/v1/tagging",
+      parameters: ["content": contentID],
+      headers: ["Authorization": self.authKey]
+      )
+      .responseJSON { response in
+        // 1.
+        guard response.result.isSuccess else {
+          print("Error while fetching tags: \(response.result.error)")
+          completion([String]())
+          return
+        }
+        
+        // 2.
+        guard let responseJSON = response.result.value as? [String: Any],
+          let results = responseJSON["results"] as? [[String: Any]],
+          let firstObject = results.first,
+          let tagsAndConfidences = firstObject["tags"] as? [[String: Any]] else {
+            print("Invalid tag information received from the service")
+            completion([String]())
+            return
+        }
+        
+        // 3.
+        let tags = tagsAndConfidences.flatMap({ dict in
+          return dict["tag"] as? String
+        })
+        
+        // 4.
+        completion(tags)
+    }
   }
 }
